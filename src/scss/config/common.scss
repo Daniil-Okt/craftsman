@@ -1,0 +1,18 @@
+// Заголовки, общие БЄМ блоки и проче...
+p {
+    line-height: 120%;
+}
+.button {
+    @include adaptiveClamp(padding, 16, 12);
+    // @include adaptiveClamp(padding-bottom, 16, 8);
+    // @include adaptiveClamp(padding-top, 12, 8);
+    // @include adaptiveClamp(padding-top, 12, 8);
+    @include adaptiveClamp(font-size, 16, 14);
+    border-radius: 50px;
+    border: 1.8px solid #fff;
+    transition: all 0.3s ease  0s;
+    cursor: pointer;
+    font-weight: 500;
+
+    
+}
