@@ -7,7 +7,7 @@
  * Если мы хотим добавить модуль следует его раскомментировать
  */
 // import MousePRLX from './libs/parallaxMouse'
-// import AOS from 'aos'
+import AOS from 'aos'
 // import Swiper, { Navigation, Pagination } from 'swiper';
 
 import BaseHelpers from './helpers/base-helpers';
@@ -45,7 +45,9 @@ new BurgerMenu().init();
  *  Библиотека для анимаций
  *  документация: https://michalsnik.github.io/aos
  * */
-// AOS.init();
+window.addEventListener('load', () => {
+	AOS.init();
+})
 
 /** ===================================================================================
  * Параллакс мышей
@@ -83,6 +85,7 @@ new BurgerMenu().init();
 */
 /*Расскоментировать для использования*/
 import { useDynamicAdapt } from './modules/dynamicAdapt.js'
+
 useDynamicAdapt()
 
 /* Маска для инпута tel =================================================================================
@@ -173,9 +176,13 @@ useDynamicAdapt()
 	* Вызвать функцию и передать в нее массив нужных элементов
 	* При клике на элемент, у всех элементов класс удаляется
 */
-// import { toggleActiveClass } from './modules/index.js'
-// const elementAll = document.querySelectorAll('.class');
-// toggleActiveClass(elementAll)
+import { toggleActiveClass } from './modules/index.js'
+const lookPaginationSwitch = document.querySelectorAll('.look-pagination__switch');
+toggleActiveClass(lookPaginationSwitch)
 
 
 
+
+//mansory
+// import { mansory } from './libs/mansory.js';
+// mansory()

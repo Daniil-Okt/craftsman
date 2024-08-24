@@ -2,9 +2,13 @@
     position: relative;
     // background-color: var(--blue);
     background-color: black;
-    @include adaptiveClamp(padding-top, 200, 125);
+    @include adaptiveClamp(padding-top, 240, 145);
     @include adaptiveClamp(padding-bottom, 230, 120);
     margin-top: rem(-100);
+
+    * {
+        color: #fff;
+    }
     &::before {
         position: absolute;
         content: '';
@@ -49,19 +53,28 @@
         h2 {
             @include adaptiveClamp(font-size, 34, 22);  
             font-weight: 600;
-            @include adaptiveClamp(margin-bottom, 18, 16);
+            @include adaptiveClamp(margin-bottom, 24, 16);
             max-width: rem(500);
             line-height: 110%;
         } 
         p {
             @include adaptiveClamp(font-size, 34, 22);  
             font-weight: 600;
-            @include adaptiveClamp(margin-bottom, 30, 20);
-            max-width: rem(500);
             line-height: 110%;
         }
         @media(max-width:1005px){
             max-width: rem(480);
+        }
+    }
+
+    &__text {
+        @include adaptiveClamp(margin-bottom, 30, 20);
+        max-width: rem(500);
+        display: flex;
+        flex-direction: column;
+        gap: rem(12);
+        @media(max-width:450px){
+            gap: rem(6);
         }
     }
 
@@ -126,7 +139,7 @@
             border-radius: 20px;
             transform: rotate(-5deg);
             z-index: 1;
-            // opacity: 0.9;
+            // opacity: 0.8;
             @media(max-width:410px){
                 left: rem(-5);
             }
@@ -155,14 +168,23 @@
     }
 
 
-
+    .waveWrapper {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+    }
     .waveWrapperInner {
         pointer-events: none;
         position: absolute;
         width: 100%;
+        height: 100%;
         overflow: hidden;
         height: 100%;
-        bottom: -1px;
+        bottom: -3px;
         // background: rgb(40, 40, 39);
         // background: linear-gradient(to top, rgb(40, 40, 39) 24%, rgb(40, 40, 39) 76%);
     }
@@ -193,14 +215,17 @@
         -webkit-animation: move-wave 3s;
         -webkit-animation-delay: 1s;
         animation-delay: 1s;
+        background-image: url(@img/about-bg-1.png);
     }
     .waveMiddle {
         background-size: 50% 84px;
         animation: move_wave 40s linear infinite;
+        background-image: url(@img/about-bg-2.png);
     }
     .waveBottom {
         background-size: 50% 64px;
         animation: move_wave 45s linear infinite;
+        background-image: url(@img/about-bg-3.png);
     }
 
 

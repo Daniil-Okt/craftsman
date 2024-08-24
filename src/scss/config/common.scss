@@ -2,6 +2,10 @@
 p {
     line-height: 120%;
 }
+* {
+    color: rgb(1, 48, 57);
+    font-weight: 500;
+}
 .button {
     @include adaptiveClamp(padding, 16, 12);
     // @include adaptiveClamp(padding-bottom, 16, 8);
@@ -13,6 +17,93 @@ p {
     transition: all 0.3s ease  0s;
     cursor: pointer;
     font-weight: 500;
+    &:active {
+        transform: scale(0.98);
+    }
+    &.blue {
+        border-color: var(--blue);
+        font-weight: 700;
+        border-width: 2px;
+        color: var(--white-color);
+        background-color: var(--blue);
+        @include adaptiveClamp(padding-left, 40, 24);
+        @include adaptiveClamp(padding-right, 40, 24);
 
-    
+        &:hover {
+            opacity: 0.9;
+        }
+
+        
+    }
+    &.blue-light {
+        color: var(--blue);
+        border-color: var(--blue);
+        font-weight: 700;
+        border-width: 2px;
+        @include adaptiveClamp(padding-top, 14, 10);
+        @include adaptiveClamp(padding-bottom, 14, 10);
+        @include adaptiveClamp(padding-left, 32, 20);
+        @include adaptiveClamp(padding-right, 32, 20);
+
+        &:hover {
+            color: #fff;
+            background-color: var(--blue);
+        }
+    }
+
+
+}
+
+.title-block {
+    @include adaptiveClamp(font-size, 54, 27);
+    font-weight: 800;
+    text-align: center;
+    color: rgb(1, 48, 57);
+    @include adaptiveClamp(margin-bottom, 50, 30);
+
+}
+
+
+input[type="radio"] {
+    display: none;
+    & + label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: rem(14); 
+        padding-left: rem(26);
+        min-height: rem(18);
+        cursor: pointer;
+        &::before {
+            position: absolute;
+            content: '';
+            width: rem(18);
+            min-width: rem(18);
+            height: rem(18);
+            top:0;
+            left: 0;
+            border-radius: 50%;
+            border: 1px solid var(--blue);
+            z-index: 2;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            width: rem(18);
+            min-width: rem(18);
+            height: rem(18);
+            top:0;
+            left: 0;
+            border-radius: 50%;
+            border: 9px solid #fff;
+            background-color: var(--blue);
+            transition: all 0.1s ease  0s;
+            z-index: 1;
+        }
+    }
+
+    &:checked + label::after {
+        border-width: rem(3);
+    }
 }
