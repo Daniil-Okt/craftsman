@@ -69,13 +69,37 @@
                 <h3 class="look-content__title">
                     Цена
                 </h3>
+                <div class="look__range-body">
+                    <div class="look__range range">
+                        <div class="range__row-input">
+                            <p>от</p>
+                            <div class="range__item-input">
+                                <input type="text" value="20000" class="range__min-input">
+                                <p class="range__currency">
+                                    RUB
+                                </p>
+                            </div>
+                            <p>до</p>
+                            <div class="range__item-input">
+                                <input type="text" value="200000" class="range__max-input">
+                                <p class="range__currency">
+                                    RUB
+                                </p>
+                            </div>
+                        </div>
+                        <div class="range__slider">
+                            <div class="slider-range"></div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="look-content__button-row">
-                    <button class="look-content__button button blue">
+                    <div class="look-content__button button blue">
                         Подобрать
-                    </button>
-                    <button class="look-content__button button blue-light">
+                    </div>
+                    <div class="look-content__button button blue-light button-reset-range button-reset-form">
                         Очистить
-                    </button>
+                    </div>
                 </div>
             </div>
         </form>

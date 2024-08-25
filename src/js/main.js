@@ -177,6 +177,7 @@ useDynamicAdapt()
 	* При клике на элемент, у всех элементов класс удаляется
 */
 import { toggleActiveClass } from './modules/index.js'
+
 const lookPaginationSwitch = document.querySelectorAll('.look-pagination__switch');
 toggleActiveClass(lookPaginationSwitch)
 
@@ -186,3 +187,71 @@ toggleActiveClass(lookPaginationSwitch)
 //mansory
 // import { mansory } from './libs/mansory.js';
 // mansory()
+
+
+
+//ползунок цены
+// import { uiSlider } from './libs/uiSlider.js';
+import "./libs/uiSlider.js";
+
+document.addEventListener("DOMContentLoaded", function() {
+	const slidersRange = document.querySelectorAll(".slider-range");
+	const minInputs = document.querySelectorAll(".range__min-input");
+	const maxInputs = document.querySelectorAll(".range__max-input");
+	const buttonResetForm =  document.querySelectorAll(".button-reset-range");
+	for (let index = 0; index < slidersRange.length; index++) {
+		// Создаем диапазонный слайдер с библиотекой noUiSlider
+	noUiSlider.create(slidersRange[index], {
+	  range: {
+		  'min': 20000,
+		  'max': 200000
+	  },
+	  start: [20000, 200000], // Начальные значения бегунков
+	  connect: true, // Связываем бегунки
+	  step: 500, // Шаг слайдера (только целые числа)
+	});
+	function numberWithSpaces(number) {
+	  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+	}
+	// Функция для обновления значений инпутов
+	function updateInputs(values) {
+		minInputs[index].value = numberWithSpaces(Math.round(values[0]));
+		maxInputs[index].value = numberWithSpaces(Math.round(values[1]));
+	}
+  
+	// Функция для обновления слайдера при вводе значений в инпуты
+	function updateSliderFromInputs() {
+		// const minValue = parseFloat(minInputs[index].value);
+		// const maxValue = parseFloat(maxInputs[index].value);
+		const minValue = parseFloat(minInputs[index].value.replace(/\s+/g, ''));
+		const maxValue = parseFloat(maxInputs[index].value.replace(/\s+/g, ''));
+
+		slidersRange[index].noUiSlider.set([minValue, maxValue]);
+	}
+  
+	// Обновляем инпуты при изменении положения бегунков
+	slidersRange[index].noUiSlider.on('update', function(values) {
+		updateInputs(values);
+	});
+  
+	// Связываем изменение инпутов с обновлением слайдера
+	minInputs[index].addEventListener('change', updateSliderFromInputs);
+	maxInputs[index].addEventListener('change', updateSliderFromInputs);
+	buttonResetForm[index].addEventListener('click', () => {
+		slidersRange[index].noUiSlider.set([20000, 200000]);
+	})
+	// Установим начальные значения для инпутов
+	updateInputs(slidersRange[index].noUiSlider.get());
+	  }
+  });
+
+const buttonsResetForm = document.querySelectorAll('.button-reset-form');
+
+if (buttonsResetForm.length > 0) {
+	buttonsResetForm.forEach(button => {
+		button.addEventListener('click', () => {
+			const form = button.closest('form')
+			form.reset()
+		})
+	});
+}
