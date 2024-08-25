@@ -8,9 +8,9 @@
   <title>Главная</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20240825000952">
+  <link rel="stylesheet" href="css/main.min.css?_v=20240825153855">
 
-  <script defer="defer" src="js/main.min.js?_v=20240825000952"></script>
+  <script defer="defer" src="js/main.min.js?_v=20240825153855"></script>
 </head>
 
   <body>
@@ -231,13 +231,37 @@
                 <h3 class="look-content__title">
                     Цена
                 </h3>
+                <div class="look__range-body">
+                    <div class="look__range range">
+                        <div class="range__row-input">
+                            <p>от</p>
+                            <div class="range__item-input">
+                                <input type="text" value="20000" class="range__min-input">
+                                <p class="range__currency">
+                                    RUB
+                                </p>
+                            </div>
+                            <p>до</p>
+                            <div class="range__item-input">
+                                <input type="text" value="200000" class="range__max-input">
+                                <p class="range__currency">
+                                    RUB
+                                </p>
+                            </div>
+                        </div>
+                        <div class="range__slider">
+                            <div class="slider-range"></div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="look-content__button-row">
-                    <button class="button blue look-content__button">
+                    <div class="button blue look-content__button">
                         Подобрать
-                    </button>
-                    <button class="button blue-light look-content__button">
+                    </div>
+                    <div class="button blue-light button-reset-form button-reset-range look-content__button">
                         Очистить
-                    </button>
+                    </div>
                 </div>
             </div>
         </form>
