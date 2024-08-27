@@ -8,9 +8,9 @@
   <title>ХУДОЖНИК СЕРЕБРЯНСКАЯ ОЛЬГА - Роспись стен, мебели, картины</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20240827132134">
+  <link rel="stylesheet" href="css/main.min.css?_v=20240827140655">
 
-  <script defer="defer" src="js/main.min.js?_v=20240827132134"></script>
+  <script defer="defer" src="js/main.min.js?_v=20240827140655"></script>
 </head>
 
   <body>
@@ -391,7 +391,7 @@
             Закажите расчет стоимости росписи стен
         </h2>
         <div class="quiz__content">
-            <div class="quiz__slider">
+            <form action="#" class="quiz__slider">
                 <div class="quiz__wrapper swiper-wrapper">
                     <div class="quiz-slide quiz__slide swiper-slide">
                         <div class="quiz-slide__body">
@@ -600,12 +600,14 @@
                             <picture><source srcset="images/projects11.webp" type="image/webp"><img src="images/projects11.jpeg" alt=""></picture>
                         </div>
                     </div>
-                    <div class="quiz-slide quiz__slide swiper-slide">
+                    <div class="quiz-slide quiz__slide swiper-slide quiz-slide-end">
                         <div class="quiz-slide__body">
                             <h2 class="quiz-slide__title">
                                 Пожалуйста, укажите Ваш номер для связи:
                             </h2>
-                            <input type="text" name="phone" placeholder="Номер телефона" class="quiz__input-text text">
+                            <div class="quiz__input-text-item">
+                                <input type="text" name="phone" placeholder="Номер телефона" class="quiz__input-text text">
+                            </div>
                             <div class="look-content__input-item look-content__input-item-checkbox">
                                 <input checked="checked" type="checkbox" id="politics" value="Позвонить, проконсультировать и сообщить стоимость" name="connection" class="look-content__input-radio">
                                 <label for="politics" class="look-content__label-radio"><span>Даю согласие на <a href="#"> обработку персональных данных</a></span></label>
@@ -644,10 +646,8 @@
                         Далее
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
-
-        
     </div>
 </div>
       </div></main>
