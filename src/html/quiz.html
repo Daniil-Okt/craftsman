@@ -1,31 +1,269 @@
 <div class="quiz">
+    <div class="quiz__fon"><svg version="1.1" viewBox="0 0 5223 186" preserveAspectRatio="none"><path d="M2057.1 37.42c206.9 83.752 297.8 147.42 660.2 92.25 493-75.037 624.1 29.02 898.2 32.826 226.7 3.145 357-81.27 521.4-81.27 164.3 0 274 98.65 436.4 101.63C4743.3 186 5259 186 5259 186L0 184.4h715.9c11.4 0 16.6-1.655 19.3-4.303 22.9-22.4 142.7-122.705 415.2-87.89 151.2 19.31 310.3-23.284 459-67.2 115.1-34.098 327-36.415 447.7 12.413z" style="fill: rgb(255, 255, 255);"></path></svg></div>
+    <div class="quiz__fon quiz__fon-bot"><svg version="1.1" viewBox="0 0 5223 186" preserveAspectRatio="none"><path d="M2057.1 37.42c206.9 83.752 297.8 147.42 660.2 92.25 493-75.037 624.1 29.02 898.2 32.826 226.7 3.145 357-81.27 521.4-81.27 164.3 0 274 98.65 436.4 101.63C4743.3 186 5259 186 5259 186L0 184.4h715.9c11.4 0 16.6-1.655 19.3-4.303 22.9-22.4 142.7-122.705 415.2-87.89 151.2 19.31 310.3-23.284 459-67.2 115.1-34.098 327-36.415 447.7 12.413z" style="fill: rgb(255, 255, 255);"></path></svg></div>
+
     <div class="quiz__container">
         <h2 class="quiz__title title-block">
-            Рассчитайте стоимость росписи
+            Закажите расчет стоимости росписи стен
         </h2>
-        <div class="quiz__slider">
-            <div class="quiz__wrapper">
-                <div class="quiz__slide quiz-slide swiper-slide">
-                    <h2 class="quiz-slide__title">
+        <div class="quiz__content">
+            <form action="#" class="quiz__slider">
+                <div class="quiz__wrapper swiper-wrapper">
+                    <div class="quiz__slide quiz-slide swiper-slide">
+                        <div class="quiz-slide__body">
+                            <h2 class="quiz-slide__title">
+                                Выберите сложность рисунка:
+                            </h2>
+                            <div class="quiz-slide__row-input">
+                                <div class="quiz-slide__input-item  quiz-label-next">
+                                    <input checked type="radio" id="complexity1" value="Простая" name="complexity" class="quiz-slide__input-radio">
+                                    <label for="complexity1" class="quiz-slide__label-radio">
+                                        <div class="quiz-slide__label-radio-img">
+                                            <div class="tick">
+                                                <svg viewBox="0 0 18 18" version="1.1">
+                                                <g>
+                                                    <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                                                    <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                                                </g>
+                                                </svg>
+                                            </div>
+                                            <img src="@img/projects13.jpeg" alt="">
+                                        </div>
+                                        
+                                        <span>
+                                            Простая
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quiz-slide__input-item  quiz-label-next">
+                                    <input type="radio" id="complexity2" value="Средняя" name="complexity" class="quiz-slide__input-radio">
+                                    <label for="complexity2" class="quiz-slide__label-radio">
+                                        <div class="quiz-slide__label-radio-img">
+                                            <div class="tick">
+                                                <svg viewBox="0 0 18 18" version="1.1">
+                                                <g>
+                                                    <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                                                    <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                                                </g>
+                                                </svg>
+                                            </div>
+                                            <img src="@img/projects8.jpeg" alt="">
+                                        </div>
+                                        
+                                        <span>
+                                            Средняя
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quiz-slide__input-item  quiz-label-next">
+                                    <input type="radio" id="complexity3" value="Сложная" name="complexity" class="quiz-slide__input-radio">
+                                    <label for="complexity3" class="quiz-slide__label-radio">
+                                        <div class="quiz-slide__label-radio-img">
+                                            <div class="tick">
+                                            <svg viewBox="0 0 18 18" version="1.1">
+                                            <g>
+                                                <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                                                <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                                            </g>
+                                            </svg>
+                                        </div>
+                                            <img src="@img/projects7.jpeg" alt="">
+                                        </div>
+                                        
+                                        <span>
+                                            Сложная
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quiz-slide__input-item  quiz-label-next">
+                                    <input type="radio" id="complexity4" value="Ультрасложная" name="complexity" class="quiz-slide__input-radio">
+                                    <label for="complexity4" class="quiz-slide__label-radio">
+                                        <div class="quiz-slide__label-radio-img">
+                                            <div class="tick">
+                                            <svg viewBox="0 0 18 18" version="1.1">
+                                            <g>
+                                                <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                                                <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                                            </g>
+                                            </svg>
+                                        </div>
+                                            <img src="@img/projects6.jpeg" alt="">
+                                        </div>
+                                        
+                                        <span>
+                                            Ультрасложная
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="quiz-slide__input-item  quiz-label-next">
+                                    <input type="radio" id="complexity5" value="Не знаю, нужна консультация" name="complexity" class="quiz-slide__input-radio">
+                                    <label for="complexity5" class="quiz-slide__label-radio">
+                                        <div class="quiz-slide__label-radio-img">
+                                            <div class="tick">
+                                            <svg viewBox="0 0 18 18" version="1.1">
+                                            <g>
+                                                <rect fill="none" x="0" y="0" width="18" height="18"></rect>
+                                                <polygon fill="#FFFFFF" points="8 10 14 4 16 6 8 14 2 8 4 6"></polygon>
+                                            </g>
+                                            </svg>
+                                        </div>
+                                            <img src="@img/about-img.webp" alt="">
+                                        </div>
+                                       
+                                        <span>
+                                            Не знаю, нужна консультация
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    </h2>
-                    <div class="quiz-slide__body">
-
+                    <div class="quiz__slide quiz-slide swiper-slide">
+                        <div class="quiz-slide__body">
+                            <h2 class="quiz-slide__title">
+                                Какая площадь рисунка?
+                            </h2>
+                            <div class="look-content__input-row">
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input checked type="radio" id="square1" value="До 10 метров" name="square" class="look-content__input-radio">
+                                    <label for="square1" class="look-content__label-radio">До 10 метров</label>
+                                </div>
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input type="radio" id="square2" value="10-20 метров" name="square" class="look-content__input-radio">
+                                    <label for="square2" class="look-content__label-radio">10-20 метров</label>
+                                </div>
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input type="radio" id="square3" value="20-50 метров" name="square" class="look-content__input-radio">
+                                    <label for="square3" class="look-content__label-radio">20-50 метров</label>
+                                </div>
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input type="radio" id="square4" value="50 метров" name="square" class="look-content__input-radio">
+                                    <label for="square4" class="look-content__label-radio">50 метров</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz-slide__img">
+                            <img src="@img/projects1.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="quiz__slide quiz-slide swiper-slide">
+                        <div class="quiz-slide__body">
+                            <h2 class="quiz-slide__title">
+                                Стена покрашена/прогрунтована?
+                            </h2>
+                            <div class="look-content__input-row">
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input checked type="radio" id="primer1" value="Да" name="primer" class="look-content__input-radio">
+                                    <label for="primer1" class="look-content__label-radio">Да</label>
+                                </div>
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input type="radio" id="primer2" value="Нет" name="primer" class="look-content__input-radio">
+                                    <label for="primer2" class="look-content__label-radio">Нет</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz-slide__img">
+                            <img src="@img/projects2.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="quiz__slide quiz-slide swiper-slide">
+                        <div class="quiz-slide__body">
+                            <h2 class="quiz-slide__title">
+                                Есть картинка, которую хотите на стене?
+                            </h2>
+                            <div class="look-content__input-row">
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input checked type="radio" id="picture1" value="Да" name="picture" class="look-content__input-radio">
+                                    <label for="picture1" class="look-content__label-radio">Да</label>
+                                </div>
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input type="radio" id="picture2" value="Нет" name="picture" class="look-content__input-radio">
+                                    <label for="picture2" class="look-content__label-radio">Нет</label>
+                                </div>
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input type="radio" id="picture3" value="Пропустить" name="picture" class="look-content__input-radio">
+                                    <label for="picture3" class="look-content__label-radio">Пропустить</label>
+                                </div>
+                            </div>
+                            <input type="file" id="" name="uploaded_file" class="input-flie">
+                        </div>
+                        <div class="quiz-slide__img">
+                            <img src="@img/projects14.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="quiz__slide quiz-slide swiper-slide">
+                        <div class="quiz-slide__body">
+                            <h2 class="quiz-slide__title">
+                                Отлично! Вы почти у цели.
+                                <br/>Напишите, куда прислать вам расчет?
+                            </h2>
+                            <div class="look-content__input-row">
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input checked type="radio" id="connection1" value="В Telegram" name="connection" class="look-content__input-radio">
+                                    <label for="connection1" class="look-content__label-radio">В Telegram</label>
+                                </div>
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input type="radio" id="connection2" value="В WhatsApp" name="connection" class="look-content__input-radio">
+                                    <label for="connection2" class="look-content__label-radio">В WhatsApp</label>
+                                </div>
+                                <div class="look-content__input-item quiz-label-next">
+                                    <input type="radio" id="connection3" value="Позвонить, проконсультировать и сообщить стоимость" name="connection" class="look-content__input-radio">
+                                    <label for="connection3" class="look-content__label-radio">Позвонить, проконсультировать и сообщить стоимость</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz-slide__img">
+                            <img src="@img/projects11.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="quiz__slide quiz-slide swiper-slide quiz-slide-end">
+                        <div class="quiz-slide__body">
+                            <h2 class="quiz-slide__title">
+                                Пожалуйста, укажите Ваш номер для связи:
+                            </h2>
+                            <div class="quiz__input-text-item">
+                                <input type="text" name="phone" placeholder="Номер телефона" class="quiz__input-text text _req tel">
+                            </div>
+                            <div class="look-content__input-item look-content__input-item-checkbox">
+                                <input checked type="checkbox" id="politics" value="Позвонить, проконсультировать и сообщить стоимость" name="connection" class="look-content__input-radio _req">
+                                <label for="politics" class="look-content__label-radio"><span>Даю согласие на <span class="link" data-type="popup-politic"> обработку персональных данных</span></span></label>
+                            </div>
+                            <div class="quiz-slide__body-social">
+                                <h3>
+                                    Или просто напишите мне:
+                                </h3>
+                                <div class="header__social">
+                                    <a target="_blank" href="https://vk.com/artellwall" class="header__social-link">
+                                        <img src="@img/vk2.svg" alt="">
+                                    </a>
+                                    <a target="_blank" href="https://t.me/Artelliartt" class="header__social-link">
+                                        <img src="@img/telegram2.svg" alt="">
+                                    </a>
+                                    <a target="_blank" href="https://wa.clck.bar/79054570603?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%97%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%B0%20%D1%80%D0%BE%D1%81%D0%BF%D0%B8%D1%81%D1%8C%20%D1%81%D1%82%D0%B5%D0%BD%D1%8B.." class="header__social-link">
+                                        <img src="@img/whatsapp2.svg" alt="">
+                                    </a>
+                                    <a target="_blank" href="https://www.instagram.com/art.ell_/" class="header__social-link">
+                                        <img src="@img/Instagram2.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz-slide__img">
+                            <img src="@img/projects6.jpeg" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="quiz__button-row">
-                <div class="quiz__button-prev">
-
+                <div class="quiz__pagination swiper-pagination"></div>
+                <div class="quiz__button-row">
+                    <div class="quiz__button-prev button blue-light">
+                        Назад
+                    </div>
+                    <div class="quiz__button-next button blue">
+                        Далее
+                    </div>
                 </div>
-                <div class="quiz__button-next button blue">
-                    Далее
-                </div>
-            </div>
-            <div class="quiz__pagination">
-
-            </div>
+            </form>
         </div>
-        
     </div>
 </div>

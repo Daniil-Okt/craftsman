@@ -1,0 +1,142 @@
+.work { 
+    @include adaptiveClamp(padding-top, 140, 50);
+    &__container {
+    }
+
+    &__title {
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 80, 50);
+    }
+
+    &__row {
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        display: flex;
+        gap: rem(40);
+        &:nth-child(2) {
+            flex-direction: row-reverse;
+        }
+        @media(max-width:990px){
+            gap: rem(20);
+        }
+        @media(max-width:650px){
+            flex-direction: column;
+            &:nth-child(2) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 100%;
+    }
+
+    &__step {
+        padding: rem(7) rem(10) rem(6);
+        background-color: var(--light);
+        display: inline-block;
+        border-radius: 4px;
+        font-weight: 600;
+        @include adaptiveClamp(margin-bottom, 40, 26);
+    }
+
+    &__title-body {
+        @include adaptiveClamp(font-size, 28, 24);
+        font-weight: 700;
+        @include adaptiveClamp(margin-bottom, 20, 16);
+    }
+
+    &__title-text {
+        max-width: rem(500);
+        @include adaptiveClamp(margin-bottom, 40, 26);
+    }
+
+    &__quote {
+        width: 100%;
+        border: 1px solid var(--blue);
+        @include adaptiveClamp(border-radius, 10, 8);
+        @include adaptiveClamp(padding, 20, 16);
+
+        h3 {
+            line-height: 130%;
+            font-weight: 700;
+            text-transform: uppercase;
+            @include adaptiveClamp(font-size, 21, 18);
+            @include adaptiveClamp(margin-bottom, 20, 18);
+            
+            b, strong {
+                color: var(--blue-light);
+                font-weight: 700;
+            }
+        }
+
+        p {
+            line-height: 140%;
+            b, strong {
+                font-weight: 700;
+            }
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        @include adaptiveClamp(border-radius, 10, 8);
+        overflow: hidden;
+        height: 100%;
+        min-height: rem(600);
+        @include adaptiveClamp(min-height, 600, 300);
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            @include adaptiveClamp(min-height, 600, 300);
+            object-fit: cover;
+        }
+    }
+    &__slider {
+        width: 100%;
+        height: 100%;
+    }
+    &__slide {
+        position: relative;
+        // @include adaptiveClamp(max-height, 600, 400);
+        max-height: rem(600);
+        height: auto;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            // @include adaptiveClamp(max-height, 600, 400);
+            max-height: rem(600);
+            object-fit: cover;
+        }
+    }
+
+    &__die {
+        position: absolute;
+        bottom: rem(16);
+        right: rem(16);
+        font-size: rem(18);
+        padding: rem(7) rem(10) rem(6);
+        background-color: var(--blue-light);
+        display: inline-block;
+        border-radius: 4px;
+        font-weight: 600;
+        color: #fff;
+        &.two {
+            background-color: var(--blue);
+        }
+    }
+}

@@ -24,7 +24,7 @@
 */
 @import 'libs/aos';
 @import 'libs/nouislider.scss';
-// @import 'libs/swiper';
+@import 'libs/swiper';
 // @import 'libs/mansory';
 
 /**
@@ -56,5 +56,8 @@
 @import 'components/about';
 @import 'components/projects';
 @import 'components/look';
-
+@import 'components/quiz';
+@import 'components/quest';
+@import 'components/work';
+@import 'components/why';
 @import 'components/footer';

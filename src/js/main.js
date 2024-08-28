@@ -8,7 +8,7 @@
  */
 // import MousePRLX from './libs/parallaxMouse'
 import AOS from 'aos'
-// import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 
 import BaseHelpers from './helpers/base-helpers';
 import PopupManager from './modules/popup-manager';
@@ -34,7 +34,7 @@ BaseHelpers.addLoadedClass();
  * На обертку(.popup) окна добавь атрибут '[data-close-overlay]'
  * На кнопку для закрытия окна добавь класс '.button-close'
  * */
-// new PopupManager();
+new PopupManager();
 
 /** ===================================================================================
  *  Модуль для работы с меню (Бургер)
@@ -91,8 +91,8 @@ useDynamicAdapt()
 /* Маска для инпута tel =================================================================================
 	* Добавить класс tel к нужному инпуту 
 */
-// import { maskTel } from './modules/index.js'
-// maskTel()
+import { maskTel } from './modules/index.js'
+maskTel()
 
 /* Cкрыть меню при клике на его ссылки ==================================================================
 */
@@ -114,38 +114,56 @@ useDynamicAdapt()
 
 /* Инициализация  swiper =================================================================================
 */
-// const swiper = new Swiper('.swiper', {
-//   speed: 800,
-//   spaceBetween: 16,
-//   slidesPerView: 1.4,
-//   modules: [Autoplay, Navigation, Pagination],
+const swiper = new Swiper('.work__slider', {
+  speed: 1200,
+  spaceBetween: 16,
+  slidesPerView: 1,
+  modules: [Autoplay],
 //   loop: true,
-//   initialSlide: 1,
-//   autoplay: {
-//     delay: 2500,
-//     stopOnLastSlide: false,
-//     disableOnIteration: false,
-//   },
+  initialSlide: 0,
+  autoplay: {
+    delay: 2700,
+    stopOnLastSlide: false,
+    disableOnIteration: false,
+  },
 //   navigation: {
-//     prevEl: ".reviews__button-slider-prev",
-//     nextEl: ".reviews__button-slider-next"
+    // prevEl: ".reviews__button-slider-prev"
+    // nextEl: ".reviews__button-slider-next"
 //   },
-//   pagination: {
-//     el: ".card-slider__pagination",
-//     dynamicBullets: true,
-//     clickable: true,
-//   },
-//   breakpoints: {
-//     1400: {
-//       slidesPerView: 4,
-//       spaceBetween: 24,
-//   	},
-//     1650: {
-//         slidesPerView: 4,
-//         spaceBetween: 48,
-//     }
-//   },
-// });
+
+});
+
+const quizSlider = new Swiper('.quiz__slider', {
+	speed: 0,
+	spaceBetween: 16,
+	slidesPerView: 1,
+	autoHeight: true,
+	modules: [Navigation, Pagination],
+	navigation: {
+ 	    prevEl: ".quiz__button-prev",
+	    // nextEl: ".quiz__button-next"
+	},
+	pagination: {
+		el: '.quiz__pagination',
+		type: 'progressbar',
+	},
+	breakpoints: {
+		841: {
+		  autoHeight: false,
+		},
+	}
+  });
+
+  const quizLabelNext = document.querySelectorAll('.quiz-label-next')
+  if (quizLabelNext.length > 0) {
+	quizLabelNext.forEach(button => {
+		button.addEventListener('mouseup', () => {
+			setTimeout(() => {
+				quizSlider.slideNext()
+			}, 400);
+		})
+	  });
+  }
 
 
 /* Валидация формы ======================================================================================
@@ -158,10 +176,17 @@ useDynamicAdapt()
 * Добавить класс .popup-thanks для модального окна спасибо
   Раскоментировать для использования
 */ 
-// import { validForm } from './modules/validFrom.js'
-// const popupTranks = document.querySelector('.popup-thanks')
-// const formNAME = document.getElementById('form-NAME')
-// validForm(fromName, popupTranks)
+import { validForm } from './modules/validFrom.js'
+const popupTranks = document.querySelector('.popup-tranks')
+
+const forms = document.querySelectorAll('form')
+if (forms.length > 0) {
+	forms.forEach(form => {
+		validForm(form, popupTranks)
+	});
+}
+
+
 // =======================================================================================================
 
 /* Добавление класса _active родителю при клике ==========================================================
@@ -169,8 +194,7 @@ useDynamicAdapt()
 	* При клике на элемент, у всех элементов класс удаляется
 */
 // import { toggleActiveClassParent } from './modules/index.js'
-// const elementAll = document.querySelectorAll('.class');
-// toggleActiveClassParent(elementAll)
+
 
 /* Динамический класса _active элементу при клике ========================================================
 	* Вызвать функцию и передать в нее массив нужных элементов
@@ -180,6 +204,8 @@ import { toggleActiveClass } from './modules/index.js'
 
 const lookPaginationSwitch = document.querySelectorAll('.look-pagination__switch');
 toggleActiveClass(lookPaginationSwitch)
+const questItem = document.querySelectorAll('.quest-item');
+toggleActiveClass(questItem)
 
 
 
@@ -255,3 +281,41 @@ if (buttonsResetForm.length > 0) {
 		})
 	});
 }
+
+//кнопка формы
+document.addEventListener('DOMContentLoaded', function () {
+    const buttonRow = document.querySelector('.quiz__button-row');
+	const quizSlideEnd = document.querySelector('.quiz-slide-end');
+    buttonRow.addEventListener('click', function (event) {
+        const nextButton = buttonRow.querySelector('.quiz__button-next');
+        const prevButton = buttonRow.querySelector('.quiz__button-prev');
+
+        if (event.target === nextButton) {
+			quizSlider.slideNext()
+
+            if (quizSlideEnd.classList.contains('swiper-slide-active') && !nextButton.classList.contains('send')) {
+                // Создаем новый элемент button с классами и текстом
+                const newButton = document.createElement('button');
+                newButton.className = nextButton.className.replace('swiper-button-disabled', '') + ' send'; // Копируем классы, убираем swiper-button-disabled и добавляем класс send
+                newButton.textContent = 'Отправить'; // Меняем текст
+
+                // Заменяем элемент div на button
+                nextButton.parentNode.replaceChild(newButton, nextButton);
+            }
+        }
+
+        if (event.target === prevButton) {
+            const currentNextButton = buttonRow.querySelector('.quiz__button-next');
+            if (currentNextButton.classList.contains('send')) {
+                // Восстанавливаем оригинальный div с текстом "Далее"
+                const originalDiv = document.createElement('div');
+                originalDiv.className = currentNextButton.className.replace(' send', '').replace('swiper-button-disabled', ''); // Убираем классы send и swiper-button-disabled
+                originalDiv.textContent = 'Далее'; // Возвращаем текст
+
+                // Заменяем элемент button обратно на div
+                currentNextButton.parentNode.replaceChild(originalDiv, currentNextButton);
+            }
+        }
+    });
+});
+

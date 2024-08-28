@@ -3,12 +3,15 @@
 //   yaCounter94592071.reachGoal('form')
 // }
 export function validForm(form, popupTranks) {
+  
     const url = 'static/send.php'
     document.addEventListener('DOMContentLoaded', () => {
+
         form.addEventListener('submit', formSend)
     
         // функция обработки формы
         async function formSend(e) { 
+         
           e.preventDefault()
       
           let error = formValidate(form)
@@ -24,9 +27,17 @@ export function validForm(form, popupTranks) {
                 .then(response => {
                   if (response.ok) {
                     // Обработка успешной отправки формы
+                    
+                    if (form.closest('.popup')) {
+                      form.closest('.popup').classList.remove('is-open')
+                    }
                     console.log('Form was submitted successfully!');
-                    popupTranks.classList.add('_is-open')
+                    if (popupTranks) {
+                      popupTranks.classList.add('is-open')
+                    }
+                  
                     form.reset()
+
                     // sendingYandexMetrika()   
                   } else {
                     // Обработка ошибок отправки формы
